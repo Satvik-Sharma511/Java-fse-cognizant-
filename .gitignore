@@ -1,0 +1,10 @@
+# Ignore compiled Java class files
+*.class
+
+# Ignore the local Java SDK folder and its downloaded zip
+jdk/
+jdk.zip
+
+# Ignore IDE configuration folders
+.vscode/
+.idea/
