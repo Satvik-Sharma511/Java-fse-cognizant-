@@ -8,3 +8,6 @@ jdk.zip
 # Ignore IDE configuration folders
 .vscode/
 .idea/
+
+# Ignore the local Maven installation
+apache-maven-*/
