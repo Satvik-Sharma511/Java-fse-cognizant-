@@ -1,0 +1,6 @@
+com\cognizant\entity\Student.class
+com\cognizant\Handson2Application.class
+com\cognizant\entity\Employee.class
+com\cognizant\entity\Department.class
+com\cognizant\entity\Course.class
+com\cognizant\repository\EmployeeRepository.class
