@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+  font-family: sans-serif;
+}
+
+.column {
+  flex: 1;
+  padding: 0 30px;
+}
+
+.center-col {
+  border-left: 4px solid #1a8f24; /* Green vertical line */
+  border-right: 4px solid #1a8f24;
+}
+
+h2 {
+  text-align: left;
+  font-size: 24px;
+}
+
+.item {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.item h3 {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.item h4 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.item p {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.item p.desc {
+  font-weight: normal;
+  color: #555;
+  margin-top: 10px;
+}
