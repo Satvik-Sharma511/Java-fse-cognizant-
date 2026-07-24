@@ -1,3 +1,14 @@
-Objectives
+# 1. Verify if master is in clean state
+git status
 
-(No content provided for this section in the prompt)
+# 2. List out all the available branches
+git branch -a
+
+# 3. Pull the remote git repository to the master
+git pull origin master
+
+# 4. Push the pending changes to the remote repository
+git push origin master
+
+# 5. Observe if the changes are reflected in the remote repository
+# (You would typically verify this on GitHub/GitLab through the web interface)

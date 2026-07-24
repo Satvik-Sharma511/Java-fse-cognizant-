@@ -1,23 +1,63 @@
-Objectives
+# 1. Verify if master is in clean state
+git status
 
-•	Explain how to clean up and push back to remote Git
+# 2. Create a branch "GitWork" and add a file "hello.xml"
+git checkout -b GitWork
+echo "<hello>Branch</hello>" > hello.xml
+git add hello.xml
 
-In this hands-on lab, you will learn how to:
-•	Execute steps involving clean up and push back to remote Git.
+# 3. Update the content of "hello.xml" and observe the status
+echo "<hello>Branch Updated</hello>" > hello.xml
+git status
 
-Prerequisites
+# 4. Commit the changes to reflect in the branch
+git add hello.xml
+git commit -m "Add hello.xml in GitWork branch"
 
-The following are the pre-requisites to complete this hands-on lab:
-•	Hands-on ID: “Git-T03-HOL_002” 
+# 5. Switch to master
+git checkout master
 
-Notes*:      
-Please follow the below steps for creating a free account in GitHub.  
-Do not use cognizant credentials to login to GitHub.
+# 6. Add a file "hello.xml" to the master and add some different content
+echo "<hello>Master</hello>" > hello.xml
+git add hello.xml
 
-Estimated time to complete this lab: 10 minutes. 
-Please follow the instructions to complete the hands-on. Each instruction expects a command for the Git Bash.
-1.	Verify if master is in clean state.
-2.	List out all the available branches.
-3.	Pull the remote git repository to the master
-4.	Push the changes, which are pending from “Git-T03-HOL_002” to the remote repository. 
-5.	Observe if the changes are reflected in the remote repository.
+# 7. Commit the changes to the master
+git commit -m "Add hello.xml in master branch"
+
+# 8. Observe the log
+git log --oneline --graph --decorate --all
+
+# 9. Check the differences with Git diff tool
+git diff master..GitWork
+
+# 10. For better visualization, use P4Merge tool
+git difftool -t p4merge master..GitWork
+
+# 11. Merge the branch to the master (This will cause a merge conflict)
+git merge GitWork
+
+# 12. Observe the git mark up for conflicts
+cat hello.xml
+
+# 13. Use 3-way merge tool to resolve the conflict
+git mergetool -t p4merge
+
+# 14. Commit the changes to the master, once done with conflict resolution
+git commit -m "Merge GitWork branch and resolve conflict"
+
+# 15. Observe the git status and add backup file to the .gitignore file
+git status
+echo "*.orig" >> .gitignore
+
+# 16. Commit the changes to the .gitignore
+git add .gitignore
+git commit -m "Ignore .orig files"
+
+# 17. List out all the available branches
+git branch
+
+# 18. Delete the branch, which merged to master
+git branch -d GitWork
+
+# 19. Observe the log
+git log --oneline --graph --decorate
